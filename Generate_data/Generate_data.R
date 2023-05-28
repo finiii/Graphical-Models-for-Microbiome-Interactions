@@ -29,7 +29,7 @@ input_function <- function(e = d, graph_type, marginal, condition_number = 100, 
 
 #Choose graph type 
 
-graph_type = 'band' 
+graph_type = 'cluster' 
 
 # Change this number by differences of thousands every time you run the script
 s = 3729471 # seed - see below
@@ -79,7 +79,8 @@ for (i in 1:no_reps){
 
 
   
-save(gen_data, seeds, file = paste("../Generate_data/gen_data_e-d_reps_", no_reps, "_" , marginal,
+save(gen_data, seeds, file = paste("/dss/dsshome1/03/ga27hec2/Graphical-Models-for-Microbiome-Interactions/Generate_data/gen_data_e-d_reps_", no_reps, "_" , marginal,
                               "_samples_",no_samples,"_p_",d,"_cn_",condition_number, "_", graph_type, ".RData", sep=''))
+
 
 

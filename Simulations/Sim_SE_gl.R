@@ -1,7 +1,7 @@
 library(SpiecEasi)
 
 
-source("../Measures/Rates.R")
+source("/dss/dsshome1/03/ga27hec2/Graphical-Models-for-Microbiome-Interactions/Measures/Rates.R")
 
 
 input_function <- function(X, graph, lambda_min_ratio = 1e-2){
@@ -33,7 +33,7 @@ input_function <- function(X, graph, lambda_min_ratio = 1e-2){
 
 # Graph type: cluster
 
-load("../Generate_data/gen_data_e-d_reps_100_zinegbin_samples_500_p_127_cn_5_cluster.RData", verbose=TRUE)
+load("/dss/dsshome1/03/ga27hec2/Graphical-Models-for-Microbiome-Interactions/Generate_data/gen_data_e-d_reps_100_zinegbin_samples_500_p_127_cn_5_cluster.RData", verbose=TRUE)
 info = 'e-d_reps_100_zinegbin_samples_500_p_127_cn_5_cluster.RData'
 Xs <- lapply(gen_data, '[[', 1L)
 graphs <- lapply(gen_data, '[[', 2L)
@@ -49,8 +49,8 @@ library(pulsar)
 no_cores <- 55
 cl <- makeCluster(no_cores, outfile = "")
 clusterEvalQ(cl, {library(SpiecEasi)
-  library(SPRING)
-  library(HARMONIES)
+  #library(SPRING)
+  #library(HARMONIES)
   library(PRROC)
   library(pulsar)}) 
 registerDoParallel(cl)
@@ -72,7 +72,7 @@ time_parallel <- system.time(
   temp <- foreach(i=1:reps) %dopar% {fct(i)})
 stopCluster(cl)
 
-save(temp, time_parallel, file = paste("../Results/SE_gl/results_SE_gl_", info, sep=''))
+save(temp, time_parallel, file = paste("/dss/dsshome1/03/ga27hec2/Graphical-Models-for-Microbiome-Interactions/Results/SE_gl/results_SE_gl_", info, sep=''))
 
 
 

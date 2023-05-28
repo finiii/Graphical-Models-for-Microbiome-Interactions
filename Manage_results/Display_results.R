@@ -33,7 +33,7 @@ get_results <- function(scores){
 ########
 
 # Choose the results you want to load
-load("../Results/SE_gl/results_SE_gl_e-d_reps_100_zinegbin_samples_500_p_127_cn_100_band.RData",verbose=TRUE)
+load("/dss/dsshome1/03/ga27hec2/Graphical-Models-for-Microbiome-Interactions/Results/SE_gl/results_SE_gl_e-d_reps_100_zinegbin_samples_500_p_127_cn_5_cluster.RData",verbose=TRUE)
 
 AUPR <- list(SE_gl = unlist(lapply(lapply(temp, '[[', 3L), '[[', 1L)))
 TPR <- list(SE_gl = unlist(lapply(lapply(temp, '[[', 3L), '[[', 2L)))
