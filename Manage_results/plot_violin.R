@@ -2,9 +2,9 @@ plot_violin <- function(value, measure, graph_type, no_samples, no_sim = 100){
   
   library(ggplot2)
   if (no_samples == 250){
-    path = "../Plots/Zinegbin_sim100_samples250"
+    path = "/dss/dsshome1/03/ga27hec2/Graphical-Models-for-Microbiome-Interactions/Plots/Zinegbin_sim100_samples250"
   }else{
-    path = "../Plots/Zinegbin_sim100_samples500"
+    path = "/dss/dsshome1/03/ga27hec2/Graphical-Models-for-Microbiome-Interactions/Plots/Zinegbin_sim100_samples500"
   }
   
   orange <- "#e33112"

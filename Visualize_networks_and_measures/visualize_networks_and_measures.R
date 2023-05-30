@@ -9,7 +9,7 @@ library(SpiecEasi)
 library(PRROC)
 require(igraph)
 
-source("colored_union.R")
+source("/dss/dsshome1/03/ga27hec2/Graphical-Models-for-Microbiome-Interactions/Visualize_networks_and_measures/colored_union.R")
 
 
 
@@ -97,8 +97,8 @@ plot(ig.mb, layout=am.coord, vertex.size=vsize, vertex.label=NA, main="SPIEC EAS
 # Load igraph before using this function
 # Choose filename = FALSE if you don't want to save the file. Otherwise, provide a file name
 # Provide a title name for the plot as well
-colored_union(ig.ground_truth, filename = 'SpiecEasi_mb', ig.mb, name = "SPIEC_EASI_mb")
-
+#colored_union(ig.ground_truth, filename = 'SpiecEasi_mb', ig.mb, name = "SPIEC_EASI_mb")
+colored_union(ig.ground_truth, filename = FALSE, ig.mb, name = "SPIEC_EASI_mb")
 
 
 # This is an animation showing inferred graphs with different penalization parameters lambda
